@@ -1,0 +1,10 @@
+# Files
+
+*.dll
+*.exe
+
+# Directories
+
+*.vs*
+*bin*
+*obj*
