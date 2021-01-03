@@ -8,7 +8,7 @@ namespace Food.RestApi
 {
 	[ApiController]
 	[Route("[controller]")]
-	public class FoodController : ControllerBase
+	public class FoodController : Controller
 	{
 		public FoodController()
 		{
