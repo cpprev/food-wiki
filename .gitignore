@@ -5,6 +5,7 @@
 
 # Directories
 
+*packages*
 *.vs*
 *bin*
 *obj*
