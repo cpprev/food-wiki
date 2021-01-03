@@ -22,9 +22,6 @@ namespace Food.DataModel
         /// </summary>
 		public double Calory { get; set; }
 
-		/// Enum Quality : good, bad, intermediate, ...
-		/// TODO
-
 		/// <summary>
         /// Advice on that food
         /// </summary>

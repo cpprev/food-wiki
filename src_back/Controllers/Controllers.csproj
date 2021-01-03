@@ -11,6 +11,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\Food\Food.Core\Food.Core.csproj" />
 		<ProjectReference Include="..\Food\Food.RestApi\Food.RestApi.csproj" />
 	</ItemGroup>
 

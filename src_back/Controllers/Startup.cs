@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Food.Core;
 
 namespace Controllers
 {
@@ -33,6 +34,11 @@ namespace Controllers
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Controllers", Version = "v1" });
             });
+
+            // Put services here!
+            services.AddSingleton<FoodService>();
+
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
