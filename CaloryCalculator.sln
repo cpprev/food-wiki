@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaloryCalculator", "CaloryCalculator\CaloryCalculator.csproj", "{371D7308-53E9-40C6-97E7-18114CCA6039}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaloryCalculator", "src_back\CaloryCalculator\CaloryCalculator.csproj", "{371D7308-53E9-40C6-97E7-18114CCA6039}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Food.Core", "src_back\Food\Food.Core\Food.Core.csproj", "{458B451C-24CE-4171-B917-077BDDAA277F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Food.DataModel", "src_back\Food\Food.DataModel\Food.DataModel.csproj", "{727380E1-B0B3-4B60-B47C-F71A7BEDF5E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Food.RestApi", "src_back\Food\Food.RestApi\Food.RestApi.csproj", "{48228BA0-200A-49C8-A31F-7F90824B5B3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{371D7308-53E9-40C6-97E7-18114CCA6039}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{371D7308-53E9-40C6-97E7-18114CCA6039}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{371D7308-53E9-40C6-97E7-18114CCA6039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{458B451C-24CE-4171-B917-077BDDAA277F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458B451C-24CE-4171-B917-077BDDAA277F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458B451C-24CE-4171-B917-077BDDAA277F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458B451C-24CE-4171-B917-077BDDAA277F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{727380E1-B0B3-4B60-B47C-F71A7BEDF5E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{727380E1-B0B3-4B60-B47C-F71A7BEDF5E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{727380E1-B0B3-4B60-B47C-F71A7BEDF5E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{727380E1-B0B3-4B60-B47C-F71A7BEDF5E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48228BA0-200A-49C8-A31F-7F90824B5B3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48228BA0-200A-49C8-A31F-7F90824B5B3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48228BA0-200A-49C8-A31F-7F90824B5B3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48228BA0-200A-49C8-A31F-7F90824B5B3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
