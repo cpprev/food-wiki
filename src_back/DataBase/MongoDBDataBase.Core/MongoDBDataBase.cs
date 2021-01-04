@@ -54,13 +54,13 @@ namespace MongoDBDataBase.Core
         public override async Task<T> GetElementByProperty<T>(string collectionName, string propName, string propValue)
         {
             var filter = Builders<BsonDocument>.Filter.Eq(propName, propValue);
-            var element = await GetCollection(collectionName).Find(filter).FirstOrDefaultAsync();
+            var element = (await GetCollection(collectionName).FindAsync(filter)).FirstOrDefault();
             return element != null ? BsonSerializer.Deserialize<T>(element) : default;
         }
 
         public override async Task<List<T>> GetAllElements<T>(string collectionName)
         {
-            var documents = GetCollection(collectionName).Find(new BsonDocument()).ToList();
+            var documents = (await GetCollection(collectionName).FindAsync(new BsonDocument())).ToList();
             var objects = new List<T>();
             foreach (var doc in documents)
             {
@@ -73,7 +73,7 @@ namespace MongoDBDataBase.Core
         {
             var doc = element is BsonDocument ? element as BsonDocument : element.ToBsonDocument();
             var filter = Builders<BsonDocument>.Filter.Eq("_id", doc.GetValue("_id"));
-            if (await GetCollection(collectionName).Find(filter).FirstOrDefaultAsync() == null)
+            if ((await GetCollection(collectionName).FindAsync(filter)).FirstOrDefault() == null)
             {
                 await GetCollection(collectionName).InsertOneAsync(doc);
             }

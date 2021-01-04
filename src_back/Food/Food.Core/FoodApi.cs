@@ -16,6 +16,7 @@ namespace Food.Core
 
 		public async Task<bool> Insert(FoodDescription food)
         {
+			food.SetId();
 			return await _service.DataBase.Add<FoodDescription>(_service.CollectionName, food);
         }
 
