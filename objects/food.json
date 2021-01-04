@@ -1,17 +1,14 @@
 [
     {
         "name": "Apple",
-        "calory": 1.1,
-        "advice": { "Health": "3 per day is preferred" }
+        "calory": 1.1
     },
     {
         "name": "Tomato",
-        "calory": 1.2,
-        "advice": { "Additional": "tomato head" }
+        "calory": 1.2
     },
     {
         "name": "Carrot",
-        "calory": 1.3,
-        "advice": { "Additional": "carrots are orange" }
+        "calory": 1.3
     }
 ]

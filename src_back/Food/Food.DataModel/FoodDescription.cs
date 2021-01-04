@@ -10,6 +10,27 @@ namespace Food.DataModel
 {
 	public class FoodDescription
 	{
+		public FoodDescription()
+		{}
+
+		public void SetId()
+        {
+			string input = Name + Description + Calory.ToString() + NutriScore.ToString()
+				         + String.Join(';', Articles) + String.Join(';', Pros) + String.Join(';', Cons);
+
+			byte[] data = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(input));
+			var sBuilder = new StringBuilder();
+			foreach (byte b in data)
+			{
+				sBuilder.Append(string.Format("{0:X2}", b));
+			}
+
+			Id = sBuilder.ToString();
+        }
+
+		/// <summary>
+		/// Id of the food
+		/// </summary>
 		[BsonId]
 		public string Id { get; set; }
 
@@ -35,6 +56,11 @@ namespace Food.DataModel
 		public NutriScore NutriScore { get; set; }
 
 		/// <summary>
+		/// Similar Food Ids
+		/// </summary>
+		public List<string> SimilarFoodId { get; set; } = new List<string>();
+
+		/// <summary>
 		/// Pros on that food
 		/// </summary>
 		public Dictionary<string, string> Pros { get; set; } = new Dictionary<string, string>();
@@ -48,32 +74,5 @@ namespace Food.DataModel
 		/// Advice on that food
 		/// </summary>
 		public Dictionary<string, string> Articles { get; set; } = new Dictionary<string, string>();
-
-
-		public FoodDescription() {}
-
-		public FoodDescription(string name, double calory, Dictionary<string, string> articles)
-		{
-			Name = name;
-			Calory = calory;
-			Articles = new Dictionary<string, string>(articles);
-
-			SetId();
-		}
-
-		public void SetId()
-        {
-			string input = Name + Description + Calory.ToString() + NutriScore.ToString()
-				+ String.Join(';', Articles) + String.Join(';', Pros) + String.Join(';', Cons);
-
-			byte[] data = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(input));
-			var sBuilder = new StringBuilder();
-			foreach (byte b in data)
-			{
-				sBuilder.Append(string.Format("{0:X2}", b));
-			}
-
-			Id = sBuilder.ToString();
-        }
 	}
 }
