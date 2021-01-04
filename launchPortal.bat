@@ -1,3 +1,3 @@
-cd src_front\calory-calculator
+cd src_front\
 
 ng serve --open
