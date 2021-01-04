@@ -22,16 +22,20 @@ namespace Food.RestApi
 		[HttpGet()]
 		public async Task<IActionResult> GetAll()
         {
-			var advice = new Dictionary<string, string>() { { "Health", "3 per day is preferred" } };
-			FoodDescription food1 = new FoodDescription("Apple", 1.1, advice);
-			var advice2 = new Dictionary<string, string>() { { "Additional", "ayo" } };
-			FoodDescription food2 = new FoodDescription("Tomato", 1.1, advice2);
-
-			await _foodService.GetApi().Insert(food1);
-			await _foodService.GetApi().Insert(food2);
-
 			return Ok(await _foodService.GetApi().GetAll());
         }
+
+		[HttpGet("load")]
+		public async Task<IActionResult> Load()
+		{
+			var contents = System.IO.File.ReadAllText("C:\\CaloryCalculator\\objects\\food.json");
+			var elements = JsonConvert.DeserializeObject<List<FoodDescription>>(contents);
+			foreach (var element in elements)
+            {
+				await _foodService.GetApi().Insert(element);
+			}
+			return Ok();
+		}
 
 		[HttpGet("insert")]
 		public async Task<IActionResult> Insert([FromBody] FoodDescription food)
