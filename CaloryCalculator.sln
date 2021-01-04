@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Food.RestApi", "src_back\Fo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controllers", "src_back\Controllers\Controllers.csproj", "{8FF878D5-D4E2-4BCD-A9CF-6526A5D6D2C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBDataBase", "src_back\DataBase\MongoDB\MongoDBDataBase.csproj", "{0BFC7DB4-FB76-4C6F-9AE9-F2FC6F31C30A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDBDataBase", "src_back\DataBase\MongoDBDataBase.Core\MongoDBDataBase.Core.csproj", "{0BFC7DB4-FB76-4C6F-9AE9-F2FC6F31C30A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "src_back\DataBase\DataBase.Core\DataBase.Core.csproj", "{DDC1A570-FE8E-44FC-B761-CCF8653AE0CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{0BFC7DB4-FB76-4C6F-9AE9-F2FC6F31C30A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BFC7DB4-FB76-4C6F-9AE9-F2FC6F31C30A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BFC7DB4-FB76-4C6F-9AE9-F2FC6F31C30A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDC1A570-FE8E-44FC-B761-CCF8653AE0CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDC1A570-FE8E-44FC-B761-CCF8653AE0CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDC1A570-FE8E-44FC-B761-CCF8653AE0CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDC1A570-FE8E-44FC-B761-CCF8653AE0CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,4 +4,10 @@
 		<TargetFramework>net5.0</TargetFramework>
 	</PropertyGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\..\DataBase\DataBase.Core\DataBase.Core.csproj" />
+		<ProjectReference Include="..\..\DataBase\MongoDBDataBase.Core\MongoDBDataBase.Core.csproj" />
+		<ProjectReference Include="..\Food.DataModel\Food.DataModel.csproj" />
+	</ItemGroup>
+
 </Project>

@@ -8,4 +8,9 @@
 		<PackageReference Include="MongoDB.Driver" Version="2.11.5" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\DataBase.Core\DataBase.Core.csproj" />
+		<ProjectReference Include="..\..\Food\Food.DataModel\Food.DataModel.csproj" />
+	</ItemGroup>
+
 </Project>
