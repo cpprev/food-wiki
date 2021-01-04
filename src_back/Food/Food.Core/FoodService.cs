@@ -6,9 +6,12 @@ namespace Food.Core
 	{
 		public DataBase.Core.DataBase DataBase { get; set; }
 
+		public readonly string CollectionName = "Food";
+
 		public FoodService()
         {
-			DataBase = new MongoDBDataBase.Core.MongoDBDataBase();
+			string collectionName = CollectionName;
+			DataBase = new MongoDBDataBase.Core.MongoDBDataBase(collectionName);
         }
 
 		public FoodApi GetApi()

@@ -49,7 +49,7 @@ namespace Food.RestApi
 		{
 			var element = await _foodService.GetApi().GetById(id);
 			if (element == null)
-				return BadRequest($"Object with id '{id}' was not found in database.");
+				return NotFound($"Object with id '{id}' not found.");
 			return Ok(element);
 		}
 
@@ -58,7 +58,7 @@ namespace Food.RestApi
 		{
 			var element = await _foodService.GetApi().GetByName(name);
 			if (element == null)
-				return BadRequest($"Object with name '{name}' was not found in database.");
+				return NotFound($"Object with name '{name}' not found.");
 			return Ok(element);
 		}
 
@@ -66,7 +66,7 @@ namespace Food.RestApi
 		public async Task<IActionResult> RemoveById([FromRoute] string id)
 		{
 			if (await _foodService.GetApi().RemoveById(id))
-				return BadRequest($"Object with id '{id}' was not found in database.");
+				return NotFound($"Object with id '{id}' not found.");
 			return Ok();
 		}
 
@@ -74,7 +74,7 @@ namespace Food.RestApi
 		public async Task<IActionResult> RemoveByName([FromRoute] string name)
 		{
 			if (await _foodService.GetApi().RemoveByName(name))
-				return BadRequest($"Object with name '{name}' was not found in database.");
+				return NotFound($"Object with name '{name}' not found.");
 			return Ok();
 		}
 
@@ -82,7 +82,7 @@ namespace Food.RestApi
 		[HttpGet("clear")]
 		public async Task<IActionResult> Clear()
 		{
-			await _foodService.DataBase.Clear();
+			await _foodService.GetApi().Clear();
 			return Ok();
 		}
 	}
