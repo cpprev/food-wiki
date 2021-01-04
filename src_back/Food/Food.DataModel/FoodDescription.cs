@@ -39,7 +39,6 @@ namespace Food.DataModel
 		private string SetId()
         {
 			string input = Name + Calory.ToString() + String.Join(';', Advice);
-			Console.WriteLine("Hash input is : " + input);
 
 			byte[] data = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(input));
 			var sBuilder = new StringBuilder();
@@ -49,7 +48,6 @@ namespace Food.DataModel
 			}
 
 			string hash = sBuilder.ToString();
-			Console.WriteLine($"The SHA256 hash is: {hash}.");
 
 			return hash;
         }
