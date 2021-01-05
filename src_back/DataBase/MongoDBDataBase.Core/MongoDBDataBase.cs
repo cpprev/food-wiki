@@ -72,7 +72,7 @@ namespace MongoDBDataBase.Core
             {
                 trie.AddWord(word);
                 var filter = Builders<BsonDocument>.Filter.Eq("_id", trie.Id);
-                await GetCollection(collectionName).DeleteOneAsync(trie.ToBsonDocument());
+                await GetCollection(collectionName).DeleteOneAsync(filter);
                 await GetCollection(collectionName).InsertOneAsync(trie.ToBsonDocument());
             }
             

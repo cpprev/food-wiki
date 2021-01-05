@@ -59,6 +59,7 @@ namespace Food.Core
 		public async Task Clear()
 		{
 			await _service.DataBase.Clear(_service.CollectionName);
+			await _service.DataBase.Clear(_service.TrieCollectionName);
 		}
 	}
 }

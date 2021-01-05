@@ -10,5 +10,17 @@
     {
         "name": "Carrot",
         "calory": 1.3
-    }
+    },
+    {
+        "name": "Cinnamon",
+        "calory": 0.1
+    },
+    {
+        "name": "Cassis",
+        "calory": 0.3
+    },
+    {
+        "name": "Cherry",
+        "calory": 0.4
+    },
 ]
