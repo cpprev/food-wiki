@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { FoodDescription } from 'src/dataModel/foodDescription';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-searcher',
@@ -12,7 +13,7 @@ export class SearcherComponent implements OnInit {
   nameList: string[];
   subscription: Subscription;
 
-  constructor(private http: HttpClient) {
+  constructor(private router: Router, private http: HttpClient) {
   }
 
   ngOnInit() {
@@ -27,17 +28,13 @@ export class SearcherComponent implements OnInit {
     if ($event.target.value.length >= 1) {
       this.nameList = [];
       this.nameList = await this.sendRequest($event.target.value);
-      //alert("li len : " + this.nameList)
     } else {
       this.nameList = [];
     }
   }
 
-  selectedResult(result: any): void {
-    /*this.userInput.nativeElement.value = result.originalText;
-    this.userSelectedResult.emit({
-      target: (result || null)
-    });*/
+  selectedResult(name: any): void {
+    this.router.navigate(['/food', name]);
     this.nameList = [];
   }
 }

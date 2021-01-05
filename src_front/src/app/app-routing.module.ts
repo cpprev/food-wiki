@@ -8,7 +8,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: SearcherComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'food/{id}', component: FoodComponent },
+  { path: 'food/:name', component: FoodComponent },
+  // TODO Make a page not found component
   { path: '**', redirectTo: 'home' }
 ];
 
