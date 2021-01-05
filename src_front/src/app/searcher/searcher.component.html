@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <div class="search-input">
+      <input type="text" class="input"  placeholder="Type to search..."
+      maxlength="20" (keyup)='searchQueryOnDataSource($event)'>
+
+      <datalist id="dynmicElementIds">
+        <option *ngFor="let result of resultDataList" [value]="result">{{result}}</option>
+      </datalist>
+
+      <div class="autocomplete">
+        <ul #filterList class="sub-list" *ngIf="resultDataList">
+          <li *ngFor="let result of resultDataList" (click)="selectedResult(result)">
+            {{result?.name}}
+          </li>
+        </ul>
+    </div>
+</div>
+    

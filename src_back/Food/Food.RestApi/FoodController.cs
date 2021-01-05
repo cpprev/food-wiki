@@ -12,6 +12,7 @@ namespace Food.RestApi
 	[Route("[controller]")]
 	public class FoodController : Controller
 	{
+		private readonly string portalUrl = "http://localhost:4200";
 		private FoodService _foodService;
 
 		public FoodController(FoodService foodService)
@@ -19,15 +20,33 @@ namespace Food.RestApi
 			_foodService = foodService;
 		}
 
+		public void AllowPortal()
+		{
+			Response.Headers.Add("Access-Control-Allow-Origin", portalUrl);
+		}
+
 		[HttpGet()]
 		public async Task<IActionResult> GetAll()
-        {
+		{
+			AllowPortal();
+
 			return Ok(await _foodService.GetApi().GetAll());
-        }
+		}
+
+		[HttpGet("getWithPattern")]
+		public async Task<IActionResult> GetWithPattern([FromQuery] string pattern)
+		{
+			Console.WriteLine("_____" + pattern);
+			AllowPortal();
+
+			return Ok(await _foodService.GetApi().GetAll());
+		}
 
 		[HttpGet("load")]
 		public async Task<IActionResult> Load()
 		{
+			AllowPortal();
+
 			var contents = System.IO.File.ReadAllText("C:\\CaloryCalculator\\objects\\food.json");
 			var elements = JsonConvert.DeserializeObject<List<FoodDescription>>(contents);
 			foreach (var element in elements)
@@ -40,6 +59,8 @@ namespace Food.RestApi
 		[HttpGet("insert")]
 		public async Task<IActionResult> Insert([FromBody] FoodDescription food)
 		{
+			AllowPortal();
+
 			var element = await _foodService.GetApi().Insert(food);
 			return Ok(element);
 		}
@@ -47,6 +68,8 @@ namespace Food.RestApi
 		[HttpGet("getById/{id}")]
 		public async Task<IActionResult> GetById([FromRoute] string id)
 		{
+			AllowPortal();
+
 			var element = await _foodService.GetApi().GetById(id);
 			if (element == null)
 				return NotFound($"Object with id '{id}' not found.");
@@ -56,6 +79,8 @@ namespace Food.RestApi
 		[HttpGet("getByName/{name}")]
 		public async Task<IActionResult> GetByName([FromRoute] string name)
 		{
+			AllowPortal();
+
 			var element = await _foodService.GetApi().GetByName(name);
 			if (element == null)
 				return NotFound($"Object with name '{name}' not found.");
@@ -65,6 +90,8 @@ namespace Food.RestApi
 		[HttpGet("removeById/{id}")]
 		public async Task<IActionResult> RemoveById([FromRoute] string id)
 		{
+			AllowPortal();
+
 			if (await _foodService.GetApi().RemoveById(id))
 				return NotFound($"Object with id '{id}' not found.");
 			return Ok();
@@ -73,6 +100,8 @@ namespace Food.RestApi
 		[HttpGet("removeByName/{name}")]
 		public async Task<IActionResult> RemoveByName([FromRoute] string name)
 		{
+			AllowPortal();
+
 			if (await _foodService.GetApi().RemoveByName(name))
 				return NotFound($"Object with name '{name}' not found.");
 			return Ok();
@@ -82,6 +111,8 @@ namespace Food.RestApi
 		[HttpGet("clear")]
 		public async Task<IActionResult> Clear()
 		{
+			AllowPortal();
+
 			await _foodService.GetApi().Clear();
 			return Ok();
 		}
