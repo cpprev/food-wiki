@@ -38,7 +38,6 @@ export class SearcherComponent implements OnInit {
     this.userSelectedResult.emit({
       target: (result || null)
     });*/
-
     this.nameList = [];
   }
 }
