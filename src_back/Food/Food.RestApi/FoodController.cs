@@ -36,10 +36,9 @@ namespace Food.RestApi
 		[HttpGet("getWithPattern")]
 		public async Task<IActionResult> GetWithPattern([FromQuery] string pattern)
 		{
-			Console.WriteLine("_____" + pattern);
 			AllowPortal();
 
-			return Ok(await _foodService.GetApi().GetAll());
+			return Ok(await _foodService.GetApi().GetWithPattern(pattern));
 		}
 
 		[HttpGet("load")]

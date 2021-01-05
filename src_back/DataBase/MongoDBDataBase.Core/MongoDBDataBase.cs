@@ -5,6 +5,8 @@ using MongoDB.Bson;
 using Food.DataModel;
 using System.Threading.Tasks;
 using MongoDB.Bson.Serialization;
+using Trie.DataModel;
+using System.Linq;
 
 namespace MongoDBDataBase.Core
 {
@@ -43,6 +45,71 @@ namespace MongoDBDataBase.Core
         {
             return Base.GetCollection<BsonDocument>(collectionName);
         }
+
+        #region TrieDataBase methods
+
+        private async Task<TrieRootDescription> GetTrieById(string collectionName, string id)
+        {
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
+            var element = (await GetCollection(collectionName).FindAsync(filter)).FirstOrDefault();
+            return element != null ? BsonSerializer.Deserialize<TrieRootDescription>(element) : default;
+        }
+
+        public override async Task<bool> AddOrUpdateTrie(string collectionName, string word)
+        {
+            var prefix = word.Substring(0, 2);
+            Console.WriteLine("prefix: " + prefix);
+            var trie = await GetTrieById(collectionName, prefix);
+            if (trie == null)
+            {
+                Console.WriteLine("(Add) : NULL");
+
+                trie = new TrieRootDescription(prefix);
+                trie.AddWord(word);
+                await GetCollection(collectionName).InsertOneAsync(trie.ToBsonDocument());
+            }
+            else
+            {
+                trie.AddWord(word);
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", trie.Id);
+                await GetCollection(collectionName).DeleteOneAsync(trie.ToBsonDocument());
+                await GetCollection(collectionName).InsertOneAsync(trie.ToBsonDocument());
+            }
+            
+            return true;
+        }
+
+        public override async Task<List<string>> GetWithPattern(string collectionName, string pattern)
+        {
+            /// TODO For now, if pattern is one char long, take a random trie
+            if (pattern.Length == 1)
+            {
+                for (var i = 0; i < TrieConstants.NbCharSupported; ++i)
+                {
+                    char c = TrieConstants.CharTable.FirstOrDefault(p => p.Value == i).Key;
+                    var tempPattern = pattern + c;
+                    var testTrie = await GetTrieById(collectionName, tempPattern);
+                    if (testTrie != null)
+                    {
+                        return testTrie.AutoComplete(testTrie.Trie, tempPattern);
+                    }
+                }
+                return new List<string>();
+            }
+
+            string savePattern = pattern;
+            pattern = pattern.Substring(0, 2);
+
+            var trie = await GetTrieById(collectionName, pattern);
+            if (trie == null)
+            {
+                return new List<string>();
+            }
+
+            return trie.AutoComplete(trie.Trie, savePattern);
+        }
+
+        #endregion
 
         #region DataBase methods
 

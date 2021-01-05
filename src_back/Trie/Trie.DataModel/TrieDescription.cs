@@ -117,7 +117,7 @@ namespace Trie.DataModel
             // Because the two first characters are the Id of the TrieRoot object
             pattern = pattern.ToLower().Substring(2);
 
-            TrieDescription start = null;
+            TrieDescription start = trie;
             for (int i = 0; i < pattern.Length; ++i)
             {
                 int ind = TrieConstants.GetCharIndex(pattern[i]);

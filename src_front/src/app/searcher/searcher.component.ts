@@ -9,7 +9,7 @@ import { FoodDescription } from 'src/dataModel/foodDescription';
   styleUrls: ['./searcher.component.scss']
 })
 export class SearcherComponent implements OnInit {
-  resultDataList: FoodDescription[];
+  nameList: string[];
   subscription: Subscription;
 
   constructor(private http: HttpClient) {
@@ -18,18 +18,18 @@ export class SearcherComponent implements OnInit {
   ngOnInit() {
   }
 
-  async sendRequest(pattern: string) : Promise<FoodDescription[]> {
-    const t = await this.http.get<FoodDescription[]>('https://localhost:5000/Food/getWithPattern' + '?pattern=' + pattern).toPromise();
+  async sendRequest(pattern: string) : Promise<string[]> {
+    const t = await this.http.get<string[]>('https://localhost:5000/Food/getWithPattern' + '?pattern=' + pattern).toPromise();
     return t;
   }
 
   async searchQueryOnDataSource($event: any): Promise<any> {
     if ($event.target.value.length >= 1) {
-      this.resultDataList = [];
-      this.resultDataList = await this.sendRequest($event.target.value);
-      //alert("li len : " + this.resultDataList)
+      this.nameList = [];
+      this.nameList = await this.sendRequest($event.target.value);
+      //alert("li len : " + this.nameList)
     } else {
-      this.resultDataList = [];
+      this.nameList = [];
     }
   }
 
@@ -39,6 +39,6 @@ export class SearcherComponent implements OnInit {
       target: (result || null)
     });*/
 
-    this.resultDataList = [];
+    this.nameList = [];
   }
 }

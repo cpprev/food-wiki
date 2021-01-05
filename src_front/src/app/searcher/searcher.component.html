@@ -4,13 +4,13 @@
       maxlength="20" (keyup)='searchQueryOnDataSource($event)'>
 
       <datalist id="dynmicElementIds">
-        <option *ngFor="let result of resultDataList" [value]="result">{{result}}</option>
+        <option *ngFor="let name of nameList" [value]="name">{{name}}</option>
       </datalist>
 
       <div class="autocomplete">
-        <ul #filterList class="sub-list" *ngIf="resultDataList">
-          <li *ngFor="let result of resultDataList" (click)="selectedResult(result)">
-            {{result?.name}}
+        <ul #filterList class="sub-list" *ngIf="nameList">
+          <li *ngFor="let name of nameList" (click)="selectedResult(name)">
+            {{name}}
           </li>
         </ul>
     </div>

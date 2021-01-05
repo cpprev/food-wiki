@@ -6,6 +6,10 @@ namespace DataBase.Core
 {
 	public abstract class DataBase
 	{
+		public abstract Task<bool> AddOrUpdateTrie(string collectionName, string word);
+
+		public abstract Task<List<string>> GetWithPattern(string collectionName, string pattern);
+
 		/// <summary>
 		/// Retreives all elements from a collection
 		/// </summary>

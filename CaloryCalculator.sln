@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDBDataBase.Core", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBase.Core", "src_back\DataBase\DataBase.Core\DataBase.Core.csproj", "{DDC1A570-FE8E-44FC-B761-CCF8653AE0CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trie.DataModel", "src_back\Trie\Trie.DataModel\Trie.DataModel\Trie.DataModel.csproj", "{14487488-1356-4134-8BDD-6366C322E664}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trie.DataModel", "src_back\Trie\Trie.DataModel\Trie.DataModel.csproj", "{14487488-1356-4134-8BDD-6366C322E664}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
