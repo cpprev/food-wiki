@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .menu-bar {
     background-color: rgb(28, 28, 44);
     color: rgb(249, 250, 249);

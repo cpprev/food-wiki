@@ -1,8 +1,9 @@
-.calory {
-    padding: 10px 8px;
-    opacity: 1;
-    pointer-events: auto;
-    background-color: rgb(20, 103, 136);
-    width: 300px;
-    margin: 0 auto;
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
 }
