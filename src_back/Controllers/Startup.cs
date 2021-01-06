@@ -39,8 +39,6 @@ namespace Controllers
             services.AddSingleton<FoodService>();
 
             services.AddControllersWithViews();
-
-            services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,8 +57,6 @@ namespace Controllers
                 context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
                 return next.Invoke();
             });
-
-            app.UseMvc();
 
             app.UseHttpsRedirection();
 
