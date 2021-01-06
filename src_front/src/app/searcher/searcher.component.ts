@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class SearcherComponent implements OnInit {
   nameList: string[];
   subscription: Subscription;
+  currentPattern: string;
 
   constructor(private router: Router, private http: HttpClient) {
   }
@@ -25,6 +26,8 @@ export class SearcherComponent implements OnInit {
   }
 
   async searchQueryOnDataSource($event: any): Promise<any> {
+    this.currentPattern = $event.target.value;
+
     if ($event.target.value.length >= 1) {
       this.nameList = [];
       this.nameList = await this.sendRequest($event.target.value);
@@ -33,8 +36,10 @@ export class SearcherComponent implements OnInit {
     }
   }
 
-  selectedResult(name: any): void {
-    this.router.navigate(['/food', name]);
-    this.nameList = [];
+  selectedResult(name: string): void {
+    if (name.length > 0) {
+      this.router.navigate(['/food', name]);
+      this.nameList = [];
+    }
   }
 }

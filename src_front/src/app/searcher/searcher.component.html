@@ -4,8 +4,10 @@
 </h1> 
 
 <div class="search-input">
-  <input type="text" class="input"  placeholder="Type to search..."
-  maxlength="20" (keyup)='searchQueryOnDataSource($event)'>
+  <form (submit)="selectedResult(currentPattern)" action="#">
+    <input type="text" class="input"  placeholder="Type a food to search..."
+    maxlength="20" (keyup)='searchQueryOnDataSource($event)'>
+  </form>
 
   <div class="autocomplete">
     <ul #filterList class="sub-list" *ngIf="nameList">
