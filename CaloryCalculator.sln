@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDBDataBase.Core", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBase.Core", "src_back\DataBase\DataBase.Core\DataBase.Core.csproj", "{DDC1A570-FE8E-44FC-B761-CCF8653AE0CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trie.DataModel", "src_back\Trie\Trie.DataModel\Trie.DataModel.csproj", "{14487488-1356-4134-8BDD-6366C322E664}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trie.DataModel", "src_back\Trie\Trie.DataModel\Trie.DataModel.csproj", "{14487488-1356-4134-8BDD-6366C322E664}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authentication", "src_back\Authentication\Authentication.csproj", "{FF62F03B-4390-4563-8F89-A93F00C7C14C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{14487488-1356-4134-8BDD-6366C322E664}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14487488-1356-4134-8BDD-6366C322E664}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14487488-1356-4134-8BDD-6366C322E664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF62F03B-4390-4563-8F89-A93F00C7C14C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF62F03B-4390-4563-8F89-A93F00C7C14C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF62F03B-4390-4563-8F89-A93F00C7C14C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF62F03B-4390-4563-8F89-A93F00C7C14C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

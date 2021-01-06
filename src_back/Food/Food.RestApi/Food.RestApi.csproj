@@ -15,6 +15,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Food.Core\Food.Core.csproj" />
 		<ProjectReference Include="..\Food.DataModel\Food.DataModel.csproj" />
+		<ProjectReference Include="..\..\Authentication\Authentication.csproj" />
 	</ItemGroup>
 
 </Project>
