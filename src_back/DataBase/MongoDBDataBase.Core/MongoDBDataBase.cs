@@ -24,6 +24,8 @@ namespace MongoDBDataBase.Core
             }
         }
 
+        #region Initialization
+
         public MongoDBDataBase(string collectionName)
         {
             InitializeCollection(collectionName);
@@ -31,6 +33,7 @@ namespace MongoDBDataBase.Core
 
         private IMongoDatabase InitializeDataBase()
         {
+            // TODO no hardcode url
             IMongoClient client = new MongoClient("mongodb://localhost:27017/");
             return client.GetDatabase("admin");
         }
@@ -46,7 +49,9 @@ namespace MongoDBDataBase.Core
             return Base.GetCollection<BsonDocument>(collectionName);
         }
 
-        #region TrieDataBase methods
+        #endregion
+
+        #region Trie DataBase methods
 
         private async Task<TrieRootDescription> GetTrieById(string collectionName, string id)
         {
@@ -58,12 +63,9 @@ namespace MongoDBDataBase.Core
         public override async Task<bool> AddOrUpdateTrie(string collectionName, string word)
         {
             var prefix = word.Substring(0, 2);
-            Console.WriteLine("prefix: " + prefix);
             var trie = await GetTrieById(collectionName, prefix);
             if (trie == null)
             {
-                Console.WriteLine("(Add) : NULL");
-
                 trie = new TrieRootDescription(prefix);
                 trie.AddWord(word);
                 await GetCollection(collectionName).InsertOneAsync(trie.ToBsonDocument());

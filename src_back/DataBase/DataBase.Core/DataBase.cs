@@ -6,13 +6,15 @@ namespace DataBase.Core
 {
 	public abstract class DataBase
 	{
-		/// <summary>
-		/// Adds or updates a trie and adds a word to it
-		/// </summary>
-		/// <param name="collectionName"></param>
-		/// <param name="word"></param>
-		/// <returns></returns>
-		public abstract Task<bool> AddOrUpdateTrie(string collectionName, string word);
+        #region Trie DataBase methods
+
+        /// <summary>
+        /// Adds or updates a trie and adds a word to it
+        /// </summary>
+        /// <param name="collectionName"></param>
+        /// <param name="word"></param>
+        /// <returns></returns>
+        public abstract Task<bool> AddOrUpdateTrie(string collectionName, string word);
 
 		/// <summary>
 		/// Gets the words thanks to a pattern (this is called to display the search bar suggestions for instance)
@@ -22,13 +24,17 @@ namespace DataBase.Core
 		/// <returns></returns>
 		public abstract Task<List<string>> GetWithPattern(string collectionName, string pattern);
 
-		/// <summary>
-		/// Retreives all elements from a collection
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="collectionName"></param>
-		/// <returns></returns>
-		public abstract Task<List<T>> GetAllElements<T>(string collectionName);
+        #endregion
+
+        #region DataBase methods
+
+        /// <summary>
+        /// Retreives all elements from a collection
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="collectionName"></param>
+        /// <returns></returns>
+        public abstract Task<List<T>> GetAllElements<T>(string collectionName);
 
 		/// <summary>
 		/// Adds an elements in a collection
@@ -83,6 +89,8 @@ namespace DataBase.Core
 		/// <param name="collectionName"></param>
 		/// <returns></returns>
 		public abstract Task Clear(string collectionName);
-	}
+
+        #endregion
+    }
 }
 
