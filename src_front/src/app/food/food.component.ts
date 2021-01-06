@@ -16,12 +16,13 @@ export class FoodComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient) {
   }
 
-  async ngOnInit(): Promise<any> {
-    this.route.queryParams.subscribe(params => {
+  ngOnInit() {
+    this.route.params.subscribe(params => {
       this.foodName = params['name'];
-    });
-
-    this.food = await this.sendRequest();
+      this.sendRequest().then((value) => {
+        this.food = value;
+      });
+     });
   }
 
   async sendRequest() : Promise<FoodDescription> {

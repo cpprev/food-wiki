@@ -78,6 +78,7 @@ namespace Food.RestApi
 		[HttpGet("getByName/{name}")]
 		public async Task<IActionResult> GetByName([FromRoute] string name)
 		{
+			Console.WriteLine("getByName");
 			AllowPortal();
 
 			var element = await _foodService.GetApi().GetByName(name);
