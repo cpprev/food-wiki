@@ -3,10 +3,6 @@
       <input type="text" class="input"  placeholder="Type to search..."
       maxlength="20" (keyup)='searchQueryOnDataSource($event)'>
 
-      <datalist id="dynmicElementIds">
-        <option *ngFor="let name of nameList" [value]="name">{{name}}</option>
-      </datalist>
-
       <div class="autocomplete">
         <ul #filterList class="sub-list" *ngIf="nameList">
           <li *ngFor="let name of nameList" (click)="selectedResult(name)">

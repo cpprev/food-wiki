@@ -1,0 +1,8 @@
+.calory {
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+    background-color: rgb(20, 103, 136);
+    width: 300px;
+    margin: 0 auto;
+}

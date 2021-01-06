@@ -1,10 +1,11 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Food.DataModel
 {
@@ -52,7 +53,7 @@ namespace Food.DataModel
 		/// <summary>
 		/// Quality of a food (good, bad, intermediate)
 		/// </summary>
-		[JsonConverter(typeof(StringEnumConverter))]
+		[JsonConverter(typeof(JsonStringEnumConverter))]
 		public NutriScore NutriScore { get; set; }
 
 		/// <summary>

@@ -1,26 +1,38 @@
 [
     {
         "name": "Apple",
-        "calory": 1.1
+        "calory": 1.1,
+	"description": "The apple is a healthy fruit",
+	"nutriscore": "A"
     },
     {
         "name": "Tomato",
-        "calory": 1.2
+        "calory": 1.2,
+	"description": "The tomato is a fruit",
+	"nutriscore": "A"
     },
     {
         "name": "Carrot",
-        "calory": 1.3
+        "calory": 1.3,
+	"description": "The carrot is a vegetable",
+	"nutriscore": "A"
     },
     {
         "name": "Cinnamon",
-        "calory": 0.1
+        "calory": 0.1,
+	"description": "Cinnamon is a spice",
+	"nutriscore": "A"
     },
     {
         "name": "Cassis",
-        "calory": 0.3
+        "calory": 0.3,
+	"description": "Cassis is a fruit",
+	"nutriscore": "A"
     },
     {
         "name": "Cherry",
-        "calory": 0.4
+        "calory": 0.4,
+	"description": "Cherry is a fruit",
+	"nutriscore": "A"
     },
 ]
