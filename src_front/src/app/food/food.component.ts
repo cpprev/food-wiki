@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FoodDescription } from 'src/dataModel/foodDescription';
 
 @Component({
@@ -13,7 +13,7 @@ export class FoodComponent implements OnInit {
   public food: FoodDescription;
   public foodName: string;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {
+  constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient) {
   }
 
   ngOnInit() {
@@ -21,6 +21,10 @@ export class FoodComponent implements OnInit {
       this.foodName = params['name'];
       this.sendRequest().then((value) => {
         this.food = value;
+      },
+      (error) => {
+        // TODO Later, redirect to a "notFound" component
+        this.router.navigate(['/home']);
       });
      });
   }
