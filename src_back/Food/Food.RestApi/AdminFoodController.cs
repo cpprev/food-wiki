@@ -6,8 +6,6 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Authentication;
 
 namespace Food.RestApi
@@ -61,7 +59,6 @@ namespace Food.RestApi
 			return Ok();
 		}
 
-		// FIXME Temporary
 		[HttpGet("clear")]
 		public async Task<IActionResult> Clear()
 		{
