@@ -1,6 +1,4 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
-//using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -15,9 +13,9 @@ namespace Food.DataModel
 		{}
 
 		public void SetId()
-        {
+		{
 			string input = Name + Description + Calory.ToString() + NutriScore.ToString()
-				         + String.Join(';', Articles) + String.Join(';', Pros) + String.Join(';', Cons);
+			+ String.Join(';', Articles) + String.Join(';', Pros) + String.Join(';', Cons);
 
 			byte[] data = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(input));
 			var sBuilder = new StringBuilder();
@@ -27,7 +25,7 @@ namespace Food.DataModel
 			}
 
 			Id = sBuilder.ToString();
-        }
+		}
 
 		/// <summary>
 		/// Id of the food
@@ -46,8 +44,8 @@ namespace Food.DataModel
 		public string Description { get; set; }
 
 		/// <summary>
-        /// Number of calory (in [measure to define])
-        /// </summary>
+		/// Number of calory (in [measure to define])
+		/// </summary>
 		public double Calory { get; set; }
 
 		/// <summary>
