@@ -19,6 +19,7 @@ namespace Food.Core
 		{
 			food.Name = food.Name.ToLower();
 			food.SetId();
+
 			await _service.TrieDataBase.AddOrUpdateTrie(_service.TrieCollectionName, food.Name);
 			return await _service.DataBase.Add<FoodDescription>(_service.CollectionName, food);
 		}
@@ -31,6 +32,7 @@ namespace Food.Core
 		public async Task<bool> RemoveByName(string name)
 		{
 			name = name.ToLower();
+
 			return await _service.DataBase.RemoveByProperty<FoodDescription>(_service.CollectionName, nameof(FoodDescription.Name), name);
 		}
 
@@ -42,6 +44,7 @@ namespace Food.Core
 		public async Task<FoodDescription> GetByName(string name)
 		{
 			name = name.ToLower();
+
 			return await _service.DataBase.GetElementByProperty<FoodDescription>(_service.CollectionName, nameof(FoodDescription.Name), name);
 		}
 
@@ -53,6 +56,7 @@ namespace Food.Core
 		public async Task<List<string>> GetWithPattern(string pattern)
 		{
 			pattern = pattern.ToLower();
+
 			return await _service.DataBase.GetWithPattern(_service.TrieCollectionName, pattern);
 		}
 
