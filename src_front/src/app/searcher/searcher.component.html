@@ -1,14 +1,17 @@
-<div class="wrapper">
-    <div class="search-input">
-      <input type="text" class="input"  placeholder="Type to search..."
-      maxlength="20" (keyup)='searchQueryOnDataSource($event)'>
 
-      <div class="autocomplete">
-        <ul #filterList class="sub-list" *ngIf="nameList">
-          <li *ngFor="let name of nameList" (click)="selectedResult(name)">
-            {{name}}
-          </li>
-        </ul>
-    </div>
+<h1 class="food-wiki-text">  
+  Food Wiki  
+</h1> 
+
+<div class="search-input">
+  <input type="text" class="input"  placeholder="Type to search..."
+  maxlength="20" (keyup)='searchQueryOnDataSource($event)'>
+
+  <div class="autocomplete">
+    <ul #filterList class="sub-list" *ngIf="nameList">
+      <li class="autocomplete-li" *ngFor="let name of nameList" (click)="selectedResult(name)">
+        {{name}}
+      </li>
+    </ul>
+  </div>
 </div>
-    
