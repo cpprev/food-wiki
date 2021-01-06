@@ -6,8 +6,20 @@ namespace DataBase.Core
 {
 	public abstract class DataBase
 	{
+		/// <summary>
+		/// Adds or updates a trie and adds a word to it
+		/// </summary>
+		/// <param name="collectionName"></param>
+		/// <param name="word"></param>
+		/// <returns></returns>
 		public abstract Task<bool> AddOrUpdateTrie(string collectionName, string word);
 
+		/// <summary>
+		/// Gets the words thanks to a pattern (this is called to display the search bar suggestions for instance)
+		/// </summary>
+		/// <param name="collectionName"></param>
+		/// <param name="pattern"></param>
+		/// <returns></returns>
 		public abstract Task<List<string>> GetWithPattern(string collectionName, string pattern);
 
 		/// <summary>
