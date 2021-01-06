@@ -1,16 +1,14 @@
-﻿using System;
-
-namespace Food.DataModel
+﻿namespace Food.DataModel
 {
-    public enum NutriScore
-    {
-        // A = good
-        A,
-        B,
-        C,
-        D,
-        // E = bad
-        E
-    }
+	public enum NutriScore
+	{
+		// A = good
+		A,
+		B,
+		C,
+		D,
+		// E = bad
+		E
+	}
 }
 

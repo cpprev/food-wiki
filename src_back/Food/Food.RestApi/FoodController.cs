@@ -49,7 +49,7 @@ namespace Food.RestApi
 			var contents = System.IO.File.ReadAllText("C:\\CaloryCalculator\\objects\\food.json");
 			var elements = JsonConvert.DeserializeObject<List<FoodDescription>>(contents);
 			foreach (var element in elements)
-            {
+			{
 				await _foodService.GetApi().Insert(element);
 			}
 			return Ok();
@@ -99,9 +99,9 @@ namespace Food.RestApi
 		[HttpGet("removeByName/{name}")]
 		public async Task<IActionResult> RemoveByName([FromRoute] string name)
 		{
-			AllowPortal();
+				AllowPortal();
 
-			if (await _foodService.GetApi().RemoveByName(name))
+				if (await _foodService.GetApi().RemoveByName(name))
 				return NotFound($"Object with name '{name}' not found.");
 			return Ok();
 		}

@@ -10,8 +10,8 @@ using System.Linq;
 
 namespace MongoDBDataBase.Core
 {
-	public class MongoDBDataBase : DataBase.Core.DataBase
-	{
+    public class MongoDBDataBase : DataBase.Core.DataBase
+    {
         private IMongoDatabase _base = null;
 
         public IMongoDatabase Base

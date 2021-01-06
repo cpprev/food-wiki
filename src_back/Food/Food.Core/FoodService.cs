@@ -11,14 +11,14 @@ namespace Food.Core
 		public readonly string CollectionName = "Food";
 
 		public FoodService()
-        {
+		{
 			TrieDataBase = new MongoDBDataBase.Core.MongoDBDataBase(TrieCollectionName);
 			DataBase = new MongoDBDataBase.Core.MongoDBDataBase(CollectionName);
-        }
+		}
 
 		public FoodApi GetApi()
-        {
+		{
 			return new FoodApi(this);
-        }
+		}
 	}
 }
