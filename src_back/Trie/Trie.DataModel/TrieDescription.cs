@@ -1,12 +1,4 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Text;
-
-namespace Trie.DataModel
+﻿namespace Trie.DataModel
 {
     public class TrieDescription
     {
