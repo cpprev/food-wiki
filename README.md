@@ -18,3 +18,5 @@
     To launch the portal : ~/launchPortal.bat
   
 ---
+
+![alt text](https://github.com/cpprev/food-wiki/blob/master/portal_search.png?raw=true)
