@@ -19,4 +19,4 @@
   
 ---
 
-![alt text](https://github.com/cpprev/food-wiki/blob/master/portal_search.png?raw=true)
+![alt text](https://github.com/cpprev/food-wiki/blob/master/images/portal_search.png?raw=true)
