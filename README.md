@@ -1,11 +1,20 @@
 # Web app to display info about food
 ---
 
-:pushpin: Back-end requirements : C#, MongoDB ; Front-end requirements : Angular
+:pushpin: Back-end requirements : C# (net5.0), MongoDB ; Front-end requirements : Angular
 
 :pushpin: The aim of this project is to enhance my fullstack skills and understand how apps are made.
 
 :pushpin: The page design part (HTML/CSS) was not really where my main focus, this is why pages are not necessarily aesthetic.
+
+---
+
+| Requirements       | Use                                                                      | Download |
+| ------------------ | ------                                                                   | -------- |
+| MongoDB            | Storage for food objects                                                 | https://www.mongodb.com/ |
+| Angular CLI        | To deploy/build/launch the portal (Cf "launchPortal.bat")                | https://cli.angular.io/ |
+| dotnet CLI         | To build the backend/apis (Cf "launchRestApis.bat")                      | https://dotnet.microsoft.com/download/dotnet-core |
+| npm                | To install the angular modules (npm install in "~/src_front")                | https://nodejs.org/en/ |
 
 ---
 
