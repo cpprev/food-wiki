@@ -91,7 +91,7 @@ namespace Trie.DataModel
 
 			var words = ListWords(start);
 			for (var i = 0; i < words.Count; ++i)
-			words[i] = Id + pattern + words[i];
+				words[i] = Id + pattern + words[i];
 
 			return words;
 		}
@@ -107,7 +107,8 @@ namespace Trie.DataModel
 
 		private void ListWordsRec(TrieDescription trie, ref List<string> words, string cur)
 		{
-			if (trie == null)
+			/// Limit number of autocompleted elements
+			if (trie == null || words.Count > 10)
 				return;
 			else if (trie.IsWord)
 				words.Add(cur);
