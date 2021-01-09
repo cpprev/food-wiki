@@ -2,37 +2,80 @@
     {
         "name": "Apple",
         "calory": 1.1,
-	"description": "The apple is a healthy fruit",
-	"nutriscore": "A"
+        "description": "The apple is a healthy fruit",
+        "nutriscore": "A"
     },
     {
         "name": "Tomato",
         "calory": 1.2,
-	"description": "The tomato is a fruit",
-	"nutriscore": "A"
+        "description": "The tomato is a fruit",
+        "nutriscore": "A"
     },
     {
         "name": "Carrot",
         "calory": 1.3,
-	"description": "The carrot is a vegetable",
-	"nutriscore": "A"
+        "description": "The carrot is a vegetable",
+        "nutriscore": "A"
     },
     {
         "name": "Cinnamon",
         "calory": 0.1,
-	"description": "Cinnamon is a spice",
-	"nutriscore": "A"
+        "description": "Cinnamon is a spice",
+        "nutriscore": "A"
     },
     {
         "name": "Cassis",
         "calory": 0.3,
-	"description": "Cassis is a fruit",
-	"nutriscore": "A"
+        "description": "Cassis is a fruit",
+        "nutriscore": "A"
+    },
+    {
+        "name": "Cake",
+        "calory": 0.3,
+        "description": "",
+        "nutriscore": "A"
+    },
+    {
+        "name": "Chicken",
+        "calory": 0.3,
+        "description": "",
+        "nutriscore": "A"
+    },
+    {
+        "name": "Cheese",
+        "calory": 0.3,
+        "description": "",
+        "nutriscore": "A"
+    },
+    {
+        "name": "Cheesecase",
+        "calory": 0.3,
+        "description": "",
+        "nutriscore": "A"
+    },
+    {
+        "name": "Chocolate",
+        "calory": 0.3,
+        "description": "",
+        "nutriscore": "A"
     },
     {
         "name": "Cherry",
         "calory": 0.4,
-	"description": "Cherry is a fruit",
-	"nutriscore": "A"
+        "description": "Cherry is a fruit",
+        "nutriscore": "A"
     },
+
+    {
+        "name": "Banana",
+        "calory": 0.5,
+        "description": "Banana is a fruit",
+        "nutriscore": "A"
+    },
+    {
+        "name": "Egg",
+        "calory": 0.2,
+        "description": "Eggs are decent",
+        "nutriscore": "A"
+    }
 ]
