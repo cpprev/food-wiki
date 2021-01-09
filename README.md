@@ -17,6 +17,8 @@
   
 ---
 
+### The portal
+
 :pushpin: Main page, with a search bar involving an autocompletion tool directly listing the closest food objects stored in database |  :pushpin: This is the template for each food element stored in database (as I said I did not have my focus on the CSS part for this project)
 :-------------------------:|:-------------------------:
 ![alt text](https://github.com/cpprev/food-wiki/blob/master/images/search_bar.png?raw=true)  |  ![alt text](https://github.com/cpprev/food-wiki/blob/master/images/food_template.png?raw=true)
