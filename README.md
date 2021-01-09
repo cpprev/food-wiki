@@ -10,3 +10,12 @@
 :pushpin: The page design part (HTML/CSS) was not really where my main focus, this is why pages are not necessarily aesthetic.
 
 ---
+
+### How to build & Usage
+
+  To launch the rest apis :
+  ~/launchRestApis.bat
+  
+  To launch the portal :
+  ~/launchPortal.bat
+  
