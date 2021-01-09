@@ -1,9 +1,7 @@
 # Web app to display info about food
 ---
 
-:pushpin: Back-end requirements : C#, MongoDB
-
-:pushpin: Front-end requirements : Angular
+:pushpin: Back-end requirements : C#, MongoDB ; Front-end requirements : Angular
 
 :pushpin: The aim of this project is to enhance my fullstack skills and understand how apps are made.
 
