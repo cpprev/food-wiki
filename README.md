@@ -19,4 +19,12 @@
   
 ---
 
+:pushpin: This is the main page, where the user can search for food names, as you can see there is an autocompletion tool directly listing the closest food objects stored in database :
+
 ![alt text](https://github.com/cpprev/food-wiki/blob/master/images/portal_search.png?raw=true)
+
+---
+
+:pushpin: This is the template for each food (as I said I did not have my focus on the CSS part for this project)
+
+![alt text](https://github.com/cpprev/food-wiki/blob/master/images/searched.png?raw=true)
