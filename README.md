@@ -14,7 +14,8 @@
 | MongoDB            | Storage for food objects                                                 | https://www.mongodb.com/ |
 | Angular CLI        | To deploy/build/launch the portal (Cf "launchPortal.bat")                | https://cli.angular.io/ |
 | dotnet CLI         | To build the backend/apis (Cf "launchRestApis.bat")                      | https://dotnet.microsoft.com/download/dotnet-core |
-| npm                | To install the angular modules (npm install in "~/src_front")                | https://nodejs.org/en/ |
+| npm                | To install the Angular modules (npm install in "~/src_front")                | https://nodejs.org/en/ |
+| nuget CLI          | To install the C# packages (ie: "nuget.exe install Microsoft.AspNetCore.Mvc -Version 1.0") | https://www.nuget.org/downloads |
 
 ---
 
