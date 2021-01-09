@@ -13,9 +13,8 @@
 
 ### How to build & Usage
 
-  To launch the rest apis :
-  ~/launchRestApis.bat
+    To launch the rest apis : ~/launchRestApis.bat
   
-  To launch the portal :
-  ~/launchPortal.bat
+    To launch the portal : ~/launchPortal.bat
   
+---
