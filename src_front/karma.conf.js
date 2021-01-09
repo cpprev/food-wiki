@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/calory-calculator'),
+      dir: require('path').join(__dirname, './coverage/food-wiki'),
       subdir: '.',
       reporters: [
         { type: 'html' },

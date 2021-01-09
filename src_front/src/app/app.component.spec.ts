@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'calory-calculator'`, () => {
+  it(`should have as title 'food-wiki'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('calory-calculator');
+    expect(app.title).toEqual('food-wiki');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('calory-calculator app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('food-wiki app is running!');
   });
 });

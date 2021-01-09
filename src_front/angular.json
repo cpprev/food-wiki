@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "calory-calculator": {
+    "food-wiki": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/calory-calculator",
+            "outputPath": "dist/food-wiki",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "calory-calculator:build"
+            "browserTarget": "food-wiki:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "calory-calculator:build:production"
+              "browserTarget": "food-wiki:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "calory-calculator:build"
+            "browserTarget": "food-wiki:build"
           }
         },
         "test": {
@@ -115,18 +115,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "calory-calculator:serve"
+            "devServerTarget": "food-wiki:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "calory-calculator:serve:production"
+              "devServerTarget": "food-wiki:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "calory-calculator",
+  "defaultProject": "food-wiki",
   "cli": {
     "analytics": "095293f4-bd31-447b-a197-db179e9d058e"
   }

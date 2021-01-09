@@ -26,7 +26,7 @@ namespace Food.RestApi
 		[HttpGet("load")]
 		public async Task<IActionResult> Load()
 		{
-			var contents = System.IO.File.ReadAllText("C:\\CaloryCalculator\\objects\\food.json");
+			var contents = System.IO.File.ReadAllText("C:\\FoodWiki\\objects\\food.json");
 			var elements = JsonConvert.DeserializeObject<List<FoodDescription>>(contents);
 			foreach (var element in elements)
 			{
