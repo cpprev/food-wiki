@@ -8,9 +8,8 @@
 :pushpin: The page design part (HTML/CSS) was not really where my main focus, this is why pages are not necessarily aesthetic.
 
 ---
-### Requirements
 
-|        | Use                                                                      | Download |
+| Requirements      | Use                                                                      | Download |
 | ------------------ | ------                                                                   | -------- |
 | MongoDB            | Storage for food objects                                                 | https://www.mongodb.com/ |
 | Angular CLI        | To deploy/build/launch the portal (Cf "launchPortal.bat")                | https://cli.angular.io/ |
